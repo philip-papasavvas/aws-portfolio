@@ -8,7 +8,7 @@ It will utilise the following services on AWS:
 - CloudWatch
 
 The plan is as follows:
-- [ ] Setup an AWS account & login to management console
+- [X] Setup an AWS account & login to management console
 - [ ] Write Python script to scrape somewhere/use a trusted source
 - [ ] Create AWS Lambda function
 - [ ] Create a storage solution on AWS - either S3 bucket or RDS instance (depending on type of data)
