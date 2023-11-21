@@ -11,6 +11,22 @@ import numpy as np
 import pandas as pd
 import yfinance
 
+
+def increment_date_by_day(
+        date_in: str,
+        is_reverse: bool = True
+) -> str:
+    """
+    Helper function to increment (back or forward) a date in time, expected format YYYY-MM-DD.
+    By default, it will go back in time one increment
+    """
+    date_dt = datetime.datetime.strptime(date_in, '%Y-%m-%d')
+    sign = 1 if is_reverse else -1
+    date_out = date_dt - datetime.timedelta(days=sign * 1)
+
+    return str(date_out)
+
+
 if __name__ == '__main__':
     date_yesterday = datetime.datetime.now().strftime("%Y-%m-%d")
 
@@ -42,19 +58,7 @@ if __name__ == '__main__':
         'GOOGL': '2023-11-10'
     }
 
-    def increment_date_by_day(
-            date_in: str,
-            is_reverse: bool = True
-    ) -> str:
-        """
-        Helper function to increment (back or forward) a date in time, expected format YYYY-MM-DD.
-        By default, it will go back in time one increment
-        """
-        date_dt = datetime.datetime.strptime(date_in, '%Y-%m-%d')
-        sign = 1 if is_reverse else -1
-        date_out = date_dt - datetime.timedelta(days=sign*1)
 
-        return date_out
 
     ticker_purchase_price_dct = {}
     for stock, dt in ticker_purchase_dict.items():
