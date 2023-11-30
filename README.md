@@ -1,21 +1,29 @@
 # aws-portfolio
-This repo has been set up to host Python files that will be run via AWS daily (during weekdays) to provide updates on mutual fund prices and listed stock prices.
+This repo has been set up to host my Python/Flask portfolio project.
+The aim is for the end state to host a Flask application on AWS that allows for a personal portfolio dashboard, to visualise changes in the portfolio value and view an attribution. The aim is for the dashboard to be fed by an Amazon RDS which is automatically updated each day with the stock prices from the stocks that we're interested in. 
 
-It will utilise the following services on AWS:
+The plan is as follows:
+- [ ] Plan the overall architecture of the application
+- [ ] Design the database schema
+- [X] Write Python script to scrape the prices from Yahoo Finance
+- [ ] Store the data in the sqlite db locally
+- [ ] 
+
+I aim to try to use lots of AWS services to best get a feel for how they work, such as:
 - AWS Lambda functions
 - S3 bucket/RDS instance
 - Simple Notification Service or Simple Email Service
 - CloudWatch
 
-The plan is as follows:
+The plan when migrating the source code (that runs successfully on my local machine) to AWS is:
 - [X] Setup an AWS account & login to management console
-- [X] Write Python script to scrape somewhere/use a trusted source
 - [X] Setup Simple Notification Service or Simple Email Service and configure it with my email credentials
-- [ ] Setup IAM user credentials (not root user)
-- [ ] Setup AWS SDK for Python (boto3) and connect it to the IAM user
+- [X] Setup IAM user credentials (not root user)
+- [ ] Create a storage solution on AWS -RDS instance (depending on type of data)
+- [ ] Tweak the script to store price data either in S3 bucket or RDS instance
 - [ ] Create AWS Lambda function
-- [ ] Create a storage solution on AWS - either S3 bucket or RDS instance (depending on type of data)
-- [ ] Update Python script in Lambda to store price data either in S3 bucket or RDS instance
 - [ ] Setup AWS CloudWatch/trigger Lambda function
 - [ ] Test the setup
 - [ ] Monitor the setup - can use X-Ray for this
+
+Extra
