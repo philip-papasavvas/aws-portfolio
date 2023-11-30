@@ -1,3 +1,10 @@
 numpy==1.26.2
 pandas==2.1.3
 yfinance==0.2.32
+sqlite
+flask
+workzeug
+flask
+config
+flask_sqlalchemy
+flask_migrate
