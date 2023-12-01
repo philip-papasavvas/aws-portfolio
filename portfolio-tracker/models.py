@@ -31,8 +31,8 @@ class Transactions(db.Model):
     __tablename__ = 'transactions'
 
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.String(64), db.ForeignKey('users.id')) # add in foreign key
-    stock_id = db.Column(db.String(10), db.ForeignKey('stocks.id')) # add in foreign key
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id')) # add in foreign key
+    stock_id = db.Column(db.Integer, db.ForeignKey('stocks.id')) # add in foreign key
     transaction_type = db.Column(db.Boolean, nullable=False)
     quantity_shares = db.Column(db.Integer, nullable=False)
     date_transaction = db.Column(db.DateTime, nullable=False)
@@ -44,4 +44,13 @@ class Portfolio(db.Model):
     user_id = db.Column(db.String(64), db.ForeignKey('users.id')) # add in foreign key
     stock_id = db.Column(db.String(10), db.ForeignKey('stocks.id'))
     total_shares = db.Column(db.Integer, nullable=False)
+
+
+class SecurityPrices(db.Model):
+    __tablename__ = 'security_prices'
+
+    price_id = db.Column(db.Integer, primary_key=True)
+    stock_id = db.Column(db.String(10), db.ForeignKey('stocks.id'))
+    date = db.Column(db.DateTime, nullable=False)
+    close_price = db.Fkiat
     
