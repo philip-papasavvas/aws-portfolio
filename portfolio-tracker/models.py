@@ -42,8 +42,8 @@ class Portfolio(db.Model):
     __tablename__ = 'portfolio'
 
     id = Column(Integer, primary_key=True)
-    user_id = Column(String(64), ForeignKey('users.id')) # add in foreign key
-    stock_id = Column(String(10), ForeignKey('stocks.id'))
+    user_id = Column(Integer, ForeignKey('users.id')) # add in foreign key
+    stock_id = Column(Integer, ForeignKey('stocks.id'))
     total_shares = Column(Integer, nullable=False)
 
 
@@ -51,6 +51,6 @@ class SecurityPrices(db.Model):
     __tablename__ = 'security_prices'
 
     price_id = Column(Integer, primary_key=True)
-    stock_id = Column(String(10), ForeignKey('stocks.id'))
+    stock_id = Column(Integer, ForeignKey('stocks.id'))
     date = Column(DateTime, nullable=False)
     close_price = Column(Float, nullable=False)
