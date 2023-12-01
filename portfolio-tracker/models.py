@@ -36,3 +36,12 @@ class Transactions(db.Model):
     transaction_type = db.Column(db.Boolean, nullable=False)
     quantity_shares = db.Column(db.Integer, nullable=False)
     date_transaction = db.Column(db.DateTime, nullable=False)
+
+class Portfolio(db.Model):
+    __tablename__ = 'portfolio'
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.String(64), db.ForeignKey('users.id')) # add in foreign key
+    stock_id = db.Column(db.String(10), db.ForeignKey('stocks.id'))
+    total_shares = db.Column(db.Integer, nullable=False)
+    
