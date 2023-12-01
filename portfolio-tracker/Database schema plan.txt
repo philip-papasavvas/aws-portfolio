@@ -11,7 +11,7 @@ Transactions Table:
     Transaction ID (Primary Key)
     User ID (Foreign Key)
     Stock ID (Foreign Key)
-    Transaction Type (Buy or Sell)
+    Is Purchase (1 for Buy, 0 for Sell)
     Number of Shares
     Transaction Date
 Portfolio Table:
