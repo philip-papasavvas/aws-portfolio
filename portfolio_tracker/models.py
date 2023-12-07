@@ -5,7 +5,7 @@ Add the db schema
 
 # third party imports
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import Column, Integer, Model, String, Float, Boolean, DateTime, ForeignKey
+from sqlalchemy import Column, Integer, String, Float, Boolean, DateTime, ForeignKey
 from werkzeug.security import generate_password_hash, check_password_hash
 
 db = SQLAlchemy()
