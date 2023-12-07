@@ -1,4 +1,7 @@
-# Added on Thursday 30 Nov 2023 to add the db schema
+"""
+Created on: 30 Nov 2023
+Add the db schema
+"""
 
 # third party imports
 from flask_sqlalchemy import SQLAlchemy
