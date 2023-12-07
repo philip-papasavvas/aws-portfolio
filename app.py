@@ -5,7 +5,7 @@ App file to initialise the Flask application and link it to a SQL Alchemy db
 """
 
 from flask import Flask
-from models import db, User, Stock, Transactions, Portfolio, SecurityPrices
+from portfolio_tracker import db, User, Stock, Transactions, Portfolio, SecurityPrices
 
 # Initiate a Flask app
 app = Flask(__name__)
