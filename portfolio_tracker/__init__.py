@@ -1,1 +1,1 @@
-from models import db, User, Stock, Transactions, Portfolio, SecurityPrices
+from portfolio_tracker.models import User, Stock, Transactions, Portfolio, SecurityPrices
