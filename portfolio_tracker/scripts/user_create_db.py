@@ -2,7 +2,7 @@
 Created on: 7 Dec 2023
 
 """
-from models import User, db
+from portfolio_tracker.models.models import User, db
 from app import app
 
 # Create a new user
