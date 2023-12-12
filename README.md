@@ -26,4 +26,31 @@ The plan when migrating the source code (that runs successfully on my local mach
 - [ ] Test the setup
 - [ ] Monitor the setup - can use X-Ray for this
 
-Extra
+
+Database Schema Plan - This is an outline of the db schema
+- User Table:
+    - User ID (Primary Key) 
+    - Username
+    - Email
+    - Password (Hashed and salted)
+- Stocks Table:
+    - Stock ID (Primary Key)
+    - Ticker Symbol
+    - Company Name
+- Transactions Table:
+    - Transaction ID (Primary Key)
+    - User ID (Foreign Key)
+    - Stock ID (Foreign Key)
+    - Is Purchase (1 for Buy, 0 for Sell)
+    - Number of Shares
+    - Transaction Date
+- Portfolio Table:
+    - Portfolio ID (Primary Key)
+    - User ID (Foreign Key)
+    - Stock ID (Foreign Key)
+    - Number of Shares
+- Stock Prices Table:
+    - Price ID (Primary Key)
+    - Stock ID (Foreign Key)
+    - Date
+    - Close Price
