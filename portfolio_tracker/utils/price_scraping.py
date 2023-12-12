@@ -73,7 +73,7 @@ if __name__ == '__main__':
     date_yesterday = datetime.datetime.now().strftime("%Y-%m-%d")
 
     # portfolio stocks
-    stock_tickers = ['TSLA', 'MSFT', 'BRK-B', 'AMZN', 'GOOGL']
+    stock_tickers = ['TSLA', 'MSFT', 'BRK-B', 'NVDA', 'GOOGL']
 
     # get the last day's prices
     last_day_px = yfinance.download(
