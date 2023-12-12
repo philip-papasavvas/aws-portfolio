@@ -26,6 +26,12 @@ The plan when migrating the source code (that runs successfully on my local mach
 - [ ] Test the setup
 - [ ] Monitor the setup - can use X-Ray for this
 
+Example Portfolio - 4 stocks
+- Tesla - TSLA
+- Microsoft - MSFT
+- Nvidia - NVDA
+- Alphabet - GOOGL
+
 
 Database Schema Plan - This is an outline of the db schema
 - User Table:
