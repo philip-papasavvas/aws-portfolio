@@ -26,9 +26,10 @@ The plan when migrating the source code (that runs successfully on my local mach
 - [ ] Test the setup
 - [ ] Monitor the setup - can use X-Ray for this
 
-Example Portfolio - 4 stocks
+Example Portfolio - 5 stocks & their tickers
 - Tesla - TSLA
 - Microsoft - MSFT
+- Berkshire Hathaway - BRK-B
 - Nvidia - NVDA
 - Alphabet - GOOGL
 
