@@ -2,18 +2,23 @@
 This repo has been set up to host my Python/Flask portfolio project.
 The aim is for the end state to host a Flask application on AWS that allows for a personal portfolio dashboard, to visualise changes in the portfolio value and view an attribution. The aim is for the dashboard to be fed by an Amazon RDS which is automatically updated each day with the stock prices from the stocks that we're interested in. 
 
-The plan is as follows:
-- [ ] Plan the overall architecture of the application
-- [ ] Design the database schema
-- [X] Write Python script to scrape the prices from Yahoo Finance
-- [ ] Store the data in the sqlite db locally
-- [ ] 
+The plan is as follows (updated on 12 Dec 2023)
+- [X] Plan the overall architecture of the application
+- [X] Design the database schema
+- [X] Write Python script to scrape the prices from Yahoo Finance - utils/price_scraping.py
+- [ ] Massage the data into a nice format for stocks - utils/prep_data.py
+- [ ] Write the stock data to the Stock db table locally
+- [ ] Populate the transactions table with some dummy transactions per user
+- [ ] Calculate the overall portfolio amount per stock for each user based on the number of transactions
+- [ ] Write unit tests for these functions define above - tests/test_price_scraping.py & tests/test_prep_data.py
+- [ ] Placeholders for the dashboard, layout, login, register HTML pages
 
-I aim to try to use lots of AWS services to best get a feel for how they work, such as:
-- AWS Lambda functions
-- S3 bucket/RDS instance
+
+Use the following AWS applications 
+- AWS Lambda functions (serverless architecture)
+- RDS instance (use postgreSQL here)
 - Simple Notification Service or Simple Email Service
-- CloudWatch
+- CloudWatch (to monitor how the app is performing)
 
 The plan when migrating the source code (that runs successfully on my local machine) to AWS is:
 - [X] Setup an AWS account & login to management console
