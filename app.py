@@ -1,23 +1,11 @@
 """
-Created on: 7 Dec 2023
-
-App file to initialise the Flask application and link it to a SQL Alchemy db
+Created on: 12 Dec 2023
+Run the app
 """
+from portfolio_tracker import create_app
 
-from flask import Flask
-from portfolio_tracker.models import db
-from portfolio_tracker import User, Stock, Transactions, Portfolio, SecurityPrices
+app = create_app()
 
-# Initiate a Flask app
-app = Flask(__name__)
-
-# Configure the SQLite database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
-# Initialize the database with the app
-db.init_app(app)
-
-# Create tables
-with app.app_context():
-    db.create_all()
+if __name__ == '__main__':
+    # only run if the script is executed correctly
+    app.run(debug=True)
