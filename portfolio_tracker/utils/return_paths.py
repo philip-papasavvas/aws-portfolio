@@ -14,5 +14,5 @@ def get_project_dir() -> str:
         str: The absolute path of the project directory.
     """
     current_dir = os.getcwd()
-    project_dir = os.path.abspath(os.path.join(current_dir, os.pardir, os.pardir))
+    project_dir = os.path.abspath(os.path.join(current_dir, '..', '..'))
     return project_dir
