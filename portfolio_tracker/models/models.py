@@ -111,3 +111,6 @@ class SecurityPrices(db.Model):
     stock_id = Column(Integer, ForeignKey('stocks.id'))
     date = Column(DateTime, nullable=False)
     close_price = Column(Float, nullable=False)
+
+    def __repr__(self):
+        return f"<SecurityPrice {self.stock_id} on {self.date}"
