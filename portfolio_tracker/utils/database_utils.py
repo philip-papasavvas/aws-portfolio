@@ -19,18 +19,7 @@ app = create_app()
 def insert_prices_into_db(stock_data_dict: Dict[str, pd.DataFrame]) -> None:
     from flask import current_app
     json_path = os.path.join(current_app.root_path, 'config', 'stocks.json')
-
-    with app.app_context():
-
-
-
-
-    try:
-        # commit the session to the database
-        db.session.commit()
-    except IntegrityError:
-        # rollback the transaction if an error occurs
-        db.session.rollback()
+    pass
 
 
 if __name__ == '__main__':
