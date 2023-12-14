@@ -30,7 +30,7 @@ def prep_stock_data_for_table(
         columns={'level_0': 'stock',
                  'level_1': 'measure',
                  'Date': 'date',
-                 '0': 'price'},
+                 0: 'price'},
         inplace=True
         )
 
