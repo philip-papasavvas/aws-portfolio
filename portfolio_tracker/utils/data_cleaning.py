@@ -26,7 +26,13 @@ def prep_stock_data_for_table(
     """
     # unstack the dataframe
     price_df_full = raw_stock_df.unstack().reset_index()
-    price_df_full.columns = ['measure', 'stock', 'date', 'price']
+    price_df_full.rename(
+        columns={'level_0': 'stock',
+                 'level_1': 'measure',
+                 'Date': 'date',
+                 '0': 'price'},
+        inplace=True
+        )
 
     # keep only the adjusted close price
     price_df = price_df_full.loc[price_df_full['measure'] == 'Adj Close'].copy()
