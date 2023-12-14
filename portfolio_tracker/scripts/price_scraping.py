@@ -119,14 +119,7 @@ if __name__ == '__main__':
 
     # now map the opening prices for each stock too - define a dictionary of the
     # ticker and the day it way purchased
-    ticker_purchase_dct = {
-        'MSFT': '2023-10-30',
-        'TSLA': '2023-05-26',
-        'BRK-B': '2023-05-31',
-        'AMZN': '2023-04-18',
-        'NVDA': '2023-04-12',
-        'GOOGL': '2023-11-10'
-    }
+
 
     ticker_result_dct = return_tickers_purchase_dict(
         ticker_purchase_dict=ticker_purchase_dct
