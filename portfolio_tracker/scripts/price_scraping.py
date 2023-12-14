@@ -119,8 +119,6 @@ if __name__ == '__main__':
 
     # now map the opening prices for each stock too - define a dictionary of the
     # ticker and the day it way purchased
-
-
-    ticker_result_dct = return_tickers_purchase_dict(
-        ticker_purchase_dict=ticker_purchase_dct
-    )
+    # ticker_result_dct = return_tickers_purchase_dict(
+    #     ticker_purchase_dict=ticker_purchase_dct
+    # )
