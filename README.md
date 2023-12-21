@@ -1,6 +1,6 @@
 # aws-portfolio
-This repo has been set up to host my Python/Flask portfolio project.
-The aim is for the end state to host a Flask application on AWS that allows for a personal portfolio dashboard, to visualise changes in the portfolio value and view an attribution. The aim is for the dashboard to be fed by an Amazon RDS which is automatically updated each day with the stock prices from the stocks that we're interested in. 
+This repo has been set up to host my serverless event-driven microservices app (Python/Flask), which is a portfolio project.
+The end state aims to host a Flask application on AWS that allows a personal portfolio dashboard to visualise changes in the portfolio value and view an attribution. The dashboard is to be fed by an Amazon RDS, which is automatically updated daily with the stock prices of the stocks we're interested in (defined in a config file). 
 
 The plan is as follows (updated on 12 Dec 2023)
 - [X] Plan the overall architecture of the application
