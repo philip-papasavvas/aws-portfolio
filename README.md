@@ -6,18 +6,18 @@ The plan is as follows (updated on 12 Dec 2023)
 - [X] Plan the overall architecture of the application
 - [X] Design the database schema
 - [X] Write Python script to scrape the prices from Yahoo Finance - utils/price_scraping.py
-- [ ] Massage the data into a nice format for stocks - utils/prep_data.py
-- [ ] Write the stock data to the Stock db table locally
+- [X] Massage the data into an suitable format for stocks - utils/prep_data.py
+- [X] Write the stock data to the Stock db table locally
+- [X] Placeholders for the dashboard, layout, login, and register HTML pages
 - [ ] Populate the transactions table with some dummy transactions per user
 - [ ] Calculate the overall portfolio amount per stock for each user based on the number of transactions
-- [ ] Write unit tests for these functions define above - tests/test_price_scraping.py & tests/test_prep_data.py
-- [ ] Placeholders for the dashboard, layout, login, register HTML pages
+- [ ] Write unit tests for these functions defined above - tests/test_price_scraping.py & tests/test_prep_data.py
 
 
 Use the following AWS applications 
 - AWS Lambda functions (serverless architecture)
 - RDS instance (use postgreSQL here)
-- Simple Notification Service or Simple Email Service
+- Simple Notification Service
 - CloudWatch (to monitor how the app is performing)
 
 The plan when migrating the source code (that runs successfully on my local machine) to AWS is:
