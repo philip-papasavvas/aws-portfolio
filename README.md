@@ -6,7 +6,7 @@ The plan is as follows (updated on 12 Dec 2023)
 - [X] Plan the overall architecture of the application
 - [X] Design the database schema
 - [X] Write Python script to scrape the prices from Yahoo Finance - utils/price_scraping.py
-- [X] Massage the data into an suitable format for stocks - utils/prep_data.py
+- [X] Massage the data into a suitable format for stocks - utils/prep_data.py
 - [X] Write the stock data to the Stock db table locally
 - [X] Placeholders for the dashboard, layout, login, and register HTML pages
 - [ ] Populate the transactions table with some dummy transactions per user
@@ -16,17 +16,17 @@ The plan is as follows (updated on 12 Dec 2023)
 
 Use the following AWS applications 
 - AWS Lambda functions (serverless architecture)
-- RDS instance (use postgreSQL here)
+- RDS using PostgreSQL 
 - Simple Notification Service
-- CloudWatch (to monitor how the app is performing)
+- CloudWatch
 
-The plan when migrating the source code (that runs successfully on my local machine) to AWS is:
+The plan when migrating the source code (that runs successfully on my local machine) to AWS is as follows:
 - [X] Setup an AWS account & login to management console
 - [X] Setup Simple Notification Service or Simple Email Service and configure it with my email credentials
 - [X] Setup IAM user credentials (not root user)
-- [ ] Create a storage solution on AWS -RDS instance (depending on type of data)
-- [ ] Tweak the script to store price data either in S3 bucket or RDS instance
-- [ ] Create AWS Lambda function
+- [ ] Create Relational Database Storage instance (t2 micro should do)
+- [ ] Tweak the script to store price data either in the RDS Table
+- [ ] Create AWS Lambda function to trigger daily
 - [ ] Setup AWS CloudWatch/trigger Lambda function
 - [ ] Test the setup
 - [ ] Monitor the setup - can use X-Ray for this
@@ -38,8 +38,7 @@ Example Portfolio - 5 stocks & their tickers
 - Nvidia - NVDA
 - Alphabet - GOOGL
 
-
-Database Schema Plan - This is an outline of the db schema
+Database Schema Plan - Below is an outline of the schema
 - User Table:
     - User ID (Primary Key) 
     - Username
