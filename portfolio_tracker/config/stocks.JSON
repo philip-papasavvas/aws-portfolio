@@ -1,7 +1,8 @@
 [
-  {"ticker": "TSLA", "name": "Tesla"},
-  {"ticker": "MSFT", "name": "Microsoft"},
-  {"ticker": "BRK-B", "name": "Berkshire Hathaway"},
-  {"ticker": "NVDA", "name": "Nvidia"},
-  {"ticker": "GOOGL", "name": "Alphabet"}
+  {"ticker": "TSLA", "name": "Tesla", "purchase_date":  "2023-05-26"},
+  {"ticker": "MSFT", "name": "Microsoft", "purchase_date":  "2023-10-30"},
+  {"ticker": "BRK-B", "name": "Berkshire Hathaway", "purchase_date":  "2023-05-31"},
+  {"ticker": "NVDA", "name": "Nvidia", "purchase_date":  "2023-04-12"},
+  {"ticker": "GOOGL", "name": "Alphabet", "purchase_date":  "2023-11-10"},
+  {"ticker": "AMZN", "name": "Amazon", "purchase_date":  "2023-04-18"}
 ]
