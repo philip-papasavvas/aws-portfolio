@@ -41,5 +41,27 @@ if __name__ == '__main__':
 
     result = run_sql(
         conn=conn,
-        sql_str="SELECT * FROM portfolio LIMIT 5"
+        sql_str="SELECT * FROM stocks"
     )
+    # table names = users, stocks, transactions, portfolio, security_prices
+
+    # stocks list
+    stocks_list = [
+        (1, 'TSLA', 'Tesla'),
+        (2, 'MSFT', 'Microsoft'),
+        (3, 'BRK-B', 'Berkshire Hathaway'),
+        (4, 'NVDA', 'Nvidia'),
+        (5, 'GOOGL', 'Alphabet'),
+        (6, 'AMZN', 'Amazon')
+    ]
+
+    stocks_dict = {
+        stock[0]: {
+            'ticker': stock[1],
+            'name': stock[2]
+        }
+        for stock in stocks_list
+    }
+
+    from pprint import pprint
+    pprint(stocks_dict)
