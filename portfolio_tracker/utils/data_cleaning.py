@@ -1,3 +1,8 @@
+"""
+Created on: 14 Dec 2023
+Script for cleaning data
+"""
+
 import datetime
 
 import pandas as pd
