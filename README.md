@@ -7,7 +7,7 @@ Email Service and API Gateway service, in addition to Relational Database Servic
 
 The deployment steps are as follows (updated 29 Jan 2024):
 - [X] Create the RDS PostgreSQL instance with the schema as below 
-- [ ] Add the database instance credentials to AWS Secrets Manager to allow the lambda function to retrieve these securely.
+- [X] Add the database instance credentials to AWS Secrets Manager to allow the lambda function to retrieve these securely.
 - [ ] Setup the Lambda functions for running the stock price update
 - [ ] Implement IAM roles and policies for Lambda functions and RDS, API Gateway.
 - [ ] Setup the SQS queue and grant the necessary permissions to the Lambda functions 
