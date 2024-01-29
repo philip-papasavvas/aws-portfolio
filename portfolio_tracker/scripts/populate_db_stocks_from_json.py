@@ -4,6 +4,7 @@ Script to populate the Stock database table with stock data from a JSON file
 """
 import os
 import json
+from typing import Dict
 
 from sqlalchemy.exc import IntegrityError
 from flask import current_app
@@ -41,7 +42,7 @@ def populate_stocks_db_table():
         db.session.rollback()  # rollback the transaction if an error occurs
 
 
-def populate_stocks_db_table_aws():
+def populate_stocks_db_table_aws(credentials: Dict[str, str]):
     """
     Populate the 'stocks' table in the PostgreSQL database with stock data.
 
@@ -49,6 +50,9 @@ def populate_stocks_db_table_aws():
     a JSON file, and inserts it into the 'stocks' table. Assumes the presence
     of 'credentials' with necessary keys and 'stocks.json' in the specified
     directory structure.
+
+    Args:
+        credentials: A dictionary with keys 'db-name', 'username', 'password', and 'host'.
 
     Raises:
         psycopg2.DatabaseError: If issues occur with database operations.
