@@ -6,14 +6,15 @@ Email Service and API Gateway service, in addition to Relational Database Servic
 (PostgreSQL) for the database.
 
 The deployment steps are as follows (updated 29 Jan 2024):
-- 1. Create the RDS PostgreSQL instance with the schema as below - [X]
-- 2. Setup the Lambda functions for running the stock price update
-- 3. Implement IAM roles and policies for Lambda functions and RDS, API Gateway.
-- 4. Setup the SQS queue and grant the necessary permissions to the Lambda functions 
+- [X] Create the RDS PostgreSQL instance with the schema as below 
+- [ ] Add the database instance credentials to AWS Secrets Manager to allow the lambda function to retrieve these securely.
+- [ ] Setup the Lambda functions for running the stock price update
+- [ ] Implement IAM roles and policies for Lambda functions and RDS, API Gateway.
+- [ ] Setup the SQS queue and grant the necessary permissions to the Lambda functions 
 to process messages.
-- 5. Setup Simple Email Service for email notifications.
-- 6. Define the API Gateway to route requests to the Lambda functions
-- 7. Implement CloudWatch Logs and Alarms for monitoring.
+- [ ] Setup Simple Email Service for email notifications.
+- [ ] Define the API Gateway to route requests to the Lambda functions
+- [ ] Implement CloudWatch Logs and Alarms for monitoring.
 
 - [ ] Setup AWS CloudWatch/trigger Lambda function
 - [ ] Test the setup
