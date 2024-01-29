@@ -1,32 +1,21 @@
 # aws-portfolio
-This repo has been set up to host my serverless event-driven microservices app (Python/Flask), which is a portfolio project.
-The end state aims to host a Flask application on AWS that allows a personal portfolio dashboard to visualise changes in the portfolio value and view an attribution. The dashboard is to be fed by an Amazon RDS, which is automatically updated daily with the stock prices of the stocks we're interested in (defined in a config file). 
+This repo has been set up to host my Python/Flask portfolio project.
+The scope of this project has changed, instead of running the Flask application on AWS, I will instead use a 
+serverless architecture, consisting of using the Lambda, Simple Queue Service, Simple
+Email Service and API Gateway service, in addition to Relational Database Service
+(PostgreSQL) for the database.
 
-The plan is as follows (updated on 12 Dec 2023)
-- [X] Plan the overall architecture of the application
-- [X] Design the database schema
-- [X] Write Python script to scrape the prices from Yahoo Finance - utils/price_scraping.py
-- [X] Massage the data into a suitable format for stocks - utils/prep_data.py
-- [X] Write the stock data to the Stock db table locally
-- [X] Placeholders for the dashboard, layout, login, and register HTML pages
-- [ ] Populate the transactions table with some dummy transactions per user
-- [ ] Calculate the overall portfolio amount per stock for each user based on the number of transactions
-- [ ] Write unit tests for these functions defined above - tests/test_price_scraping.py & tests/test_prep_data.py
+The deployment steps are as follows (updated 29 Jan 2024):
+- [X] Create the RDS PostgreSQL instance with the schema as below 
+- [ ] Add the database instance credentials to AWS Secrets Manager to allow the lambda function to retrieve these securely.
+- [ ] Setup the Lambda functions for running the stock price update
+- [ ] Implement IAM roles and policies for Lambda functions and RDS, API Gateway.
+- [ ] Setup the SQS queue and grant the necessary permissions to the Lambda functions 
+to process messages.
+- [ ] Setup Simple Email Service for email notifications.
+- [ ] Define the API Gateway to route requests to the Lambda functions
+- [ ] Implement CloudWatch Logs and Alarms for monitoring.
 
-
-Use the following AWS applications 
-- AWS Lambda functions (serverless architecture)
-- RDS using PostgreSQL 
-- Simple Notification Service
-- CloudWatch
-
-The plan when migrating the source code (that runs successfully on my local machine) to AWS is as follows:
-- [X] Setup an AWS account & login to management console
-- [X] Setup Simple Notification Service or Simple Email Service and configure it with my email credentials
-- [X] Setup IAM user credentials (not root user)
-- [ ] Create Relational Database Storage instance (t2 micro should do)
-- [ ] Tweak the script to store price data either in the RDS Table
-- [ ] Create AWS Lambda function to trigger daily
 - [ ] Setup AWS CloudWatch/trigger Lambda function
 - [ ] Test the setup
 - [ ] Monitor the setup - can use X-Ray for this
@@ -38,7 +27,8 @@ Example Portfolio - 5 stocks & their tickers
 - Nvidia - NVDA
 - Alphabet - GOOGL
 
-Database Schema Plan - Below is an outline of the schema
+
+Database Schema Plan - This is an outline of the db schema
 - User Table:
     - User ID (Primary Key) 
     - Username

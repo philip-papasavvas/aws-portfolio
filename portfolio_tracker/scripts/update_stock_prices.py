@@ -67,7 +67,7 @@ def fetch_and_insert_stock_data(
     date_start: str,
     date_end: str
 ):
-    json_path = os.path.join(get_project_dir(), 'config', 'stocks.json')
+    json_path = os.path.join(get_project_dir(), 'portfolio_tracker', 'config', 'stocks.json')
     with open(json_path) as file:
         stocks_dict = json.load(file)
 
@@ -90,8 +90,8 @@ def fetch_and_insert_stock_data(
 
 
 if __name__ == '__main__':
-    date_start = 'YYYY-MM-DD'
-    date_end = 'YYYY-MM-DD'
+    date_start = '2010-01-01'
+    date_end = '2023-12-31'
     fetch_and_insert_stock_data(
         date_start=date_start,
         date_end=date_end
