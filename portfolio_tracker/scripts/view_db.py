@@ -2,27 +2,26 @@
 Created on: 2 January 2024
 Script to inspect current database and determine gaps/update steps required
 """
-import sqlite3
-from sqlite3 import Error, Connection
+import json
+import os
+
+import psycopg2
+from psycopg2.extensions import connection
+
+from portfolio_tracker.utils.return_paths import get_project_dir
+
+with open(os.path.join(get_project_dir(), 'portfolio_tracker', 'config', 'credentials.JSON')) as file:
+    credentials = json.load(file)
+
+conn = psycopg2.connect(
+        dbname=credentials['db-name'],
+        user=credentials['username'],
+        password=credentials['password'],
+        host=credentials['host']
+)
 
 
-def create_connection(db_file_path: str) -> Connection:
-    """
-    Create a DB connection to the sqlite db specified by the db_file_path given
-
-    Returns:
-        Connection: Connection object or None
-    """
-    conn = None
-    try:
-        conn = sqlite3.connect(db_file_path)
-        return conn
-    except Error as e:
-        print(e)
-    return conn
-
-
-def run_sql(conn: Connection, sql_str: str):
+def run_sql(conn: connection, sql_str: str):
     """
     Run SQL command and return the results
     """
@@ -37,7 +36,6 @@ if __name__ == '__main__':
     from portfolio_tracker.utils.return_paths import get_project_dir
 
     database_path = os.path.join(get_project_dir(), 'instance', 'app.db')
-    conn = create_connection(database_path)
 
     result = run_sql(
         conn=conn,
