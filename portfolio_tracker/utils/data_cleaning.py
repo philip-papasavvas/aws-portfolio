@@ -2,15 +2,12 @@
 Created on: 14 Dec 2023
 Script for cleaning data
 """
-
 import datetime
-
-import pandas as pd
 
 
 def increment_date_by_day(
-    date_in: str,
-    is_reverse: bool = True
+        date_in: str,
+        is_reverse: bool = True
 ) -> str:
     """
     Helper function to increment (back or forward) a date in time, expected format YYYY-MM-DD.
@@ -21,28 +18,6 @@ def increment_date_by_day(
     date_out = date_dt + datetime.timedelta(days=sign * 1)
 
     return str(date_out)
-
-
-def prep_stock_data_for_table(
-    raw_stock_df: pd.DataFrame
-) -> pd.DataFrame:
-    """
-    Docstring here
-    """
-    # unstack the dataframe
-    price_df_full = raw_stock_df.unstack().reset_index()
-    price_df_full.rename(
-        columns={'level_0': 'stock',
-                 'level_1': 'measure',
-                 'Date': 'date',
-                 0: 'price'},
-        inplace=True
-        )
-
-    # keep only the adjusted close price
-    price_df = price_df_full.loc[price_df_full['measure'] == 'Adj Close'].copy()
-
-    return price_df
 
 
 if __name__ == '__main__':
