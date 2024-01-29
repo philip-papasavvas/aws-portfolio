@@ -6,7 +6,7 @@ Email Service and API Gateway service, in addition to Relational Database Servic
 (PostgreSQL) for the database.
 
 The deployment steps are as follows (updated 29 Jan 2024):
-- 1. Create the RDS PostgreSQL instance with the schema as below
+- 1. Create the RDS PostgreSQL instance with the schema as below - [X]
 - 2. Setup the Lambda functions for running the stock price update
 - 3. Implement IAM roles and policies for Lambda functions and RDS, API Gateway.
 - 4. Setup the SQS queue and grant the necessary permissions to the Lambda functions 
