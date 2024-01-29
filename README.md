@@ -1,32 +1,20 @@
 # aws-portfolio
 This repo has been set up to host my Python/Flask portfolio project.
-The aim is for the end state to host a Flask application on AWS that allows for a personal portfolio dashboard, to visualise changes in the portfolio value and view an attribution. The aim is for the dashboard to be fed by an Amazon RDS which is automatically updated each day with the stock prices from the stocks that we're interested in. 
+The scope of this project has changed, instead of running the Flask application on AWS, I will instead use a 
+serverless architecture, consisting of using the Lambda, Simple Queue Service, Simple
+Email Service and API Gateway service, in addition to Relational Database Service
+(PostgreSQL) for the database.
 
-The plan is as follows (updated on 12 Dec 2023)
-- [X] Plan the overall architecture of the application
-- [X] Design the database schema
-- [X] Write Python script to scrape the prices from Yahoo Finance - utils/price_scraping.py
-- [ ] Massage the data into a nice format for stocks - utils/prep_data.py
-- [ ] Write the stock data to the Stock db table locally
-- [ ] Populate the transactions table with some dummy transactions per user
-- [ ] Calculate the overall portfolio amount per stock for each user based on the number of transactions
-- [ ] Write unit tests for these functions define above - tests/test_price_scraping.py & tests/test_prep_data.py
-- [ ] Placeholders for the dashboard, layout, login, register HTML pages
+The deployment steps are as follows (updated 29 Jan 2024):
+- 1. Create the RDS PostgreSQL instance with the schema as below
+- 2. Setup the Lambda functions for running the stock price update
+- 3. Implement IAM roles and policies for Lambda functions and RDS, API Gateway.
+- 4. Setup the SQS queue and grant the necessary permissions to the Lambda functions 
+to process messages.
+- 5. Setup Simple Email Service for email notifications.
+- 6. Define the API Gateway to route requests to the Lambda functions
+- 7. Implement CloudWatch Logs and Alarms for monitoring.
 
-
-Use the following AWS applications 
-- AWS Lambda functions (serverless architecture)
-- RDS instance (use postgreSQL here)
-- Simple Notification Service or Simple Email Service
-- CloudWatch (to monitor how the app is performing)
-
-The plan when migrating the source code (that runs successfully on my local machine) to AWS is:
-- [X] Setup an AWS account & login to management console
-- [X] Setup Simple Notification Service or Simple Email Service and configure it with my email credentials
-- [X] Setup IAM user credentials (not root user)
-- [ ] Create a storage solution on AWS -RDS instance (depending on type of data)
-- [ ] Tweak the script to store price data either in S3 bucket or RDS instance
-- [ ] Create AWS Lambda function
 - [ ] Setup AWS CloudWatch/trigger Lambda function
 - [ ] Test the setup
 - [ ] Monitor the setup - can use X-Ray for this
