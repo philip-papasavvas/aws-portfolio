@@ -164,3 +164,4 @@ cython_debug/
 /portfolio_tracker/config/credentials.JSON
 data/stocks_history.csv
 data/stocks_lookup.csv
+.idea/misc.xml
